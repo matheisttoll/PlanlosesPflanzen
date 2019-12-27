@@ -1,0 +1,9 @@
+QMenuBar, QMenu, QLabel, QDialog, MainWindow {
+    font: bold 22px;
+    background: darkgreen;
+    color: white;
+}
+
+QMenuBar::item:selected, QMenu::item:selected {
+    background: green;
+}
