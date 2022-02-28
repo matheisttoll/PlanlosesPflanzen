@@ -56,6 +56,8 @@ void GameBoard::resizeBoard(BoardDims dims) {
     findNeighbours();
     resetBoard();
     flagWidget->setMines(mines);
+    adjustSize();
+    parentWidget()->adjustSize();
 }
 
 void GameBoard::populateGrid() {
