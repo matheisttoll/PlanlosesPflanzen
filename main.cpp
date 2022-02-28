@@ -14,27 +14,17 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QCoreApplication::setOrganizationName("Fuhrmann");
+//    QCoreApplication::setOrganizationName("Fuhrmann");
     QCoreApplication::setOrganizationDomain("paulfuhrmann.de");
     QCoreApplication::setApplicationName("BlumenSweeper");
 
-    QSettings settings;
-    QString resourcesPath;
-    QVariant posVal = settings.value(keys::resourcesPath);
-    bool askForResources = false;
-    if(posVal.isNull()) {
-        askForResources = true;
-    } else {
-        resourcesPath = posVal.toString();
-    }
-
-    QFile styleFile = QFile(resourcesPath + "/styleSheet.qss");
+    QFile styleFile = QFile(":/resources/styleSheet.qss");
     styleFile.open(QFile::ReadOnly);
     QString styleSheet = QLatin1String(styleFile.readAll());
     a.setStyleSheet(styleSheet);
     QRect screenRect = a.primaryScreen()->geometry();
 
-    MainWindow w(screenRect, askForResources);
+    MainWindow w(screenRect);
     w.show();
     return a.exec();
 }

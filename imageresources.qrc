@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/app_icon.png</file>
+        <file>resources/flag_icon.png</file>
+        <file>resources/square_flagged.png</file>
+        <file>resources/square_mine_exploded.png</file>
+        <file>resources/square_mine_flagged.png</file>
+        <file>resources/square_mine_lost.png</file>
+        <file>resources/square_mine_won.png</file>
+        <file>resources/square_revealed.png</file>
+        <file>resources/square_unrevealed.png</file>
+        <file>resources/styleSheet.qss</file>
+    </qresource>
+</RCC>

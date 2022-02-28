@@ -11,16 +11,13 @@ class MainWindow : public QMainWindow
 
 
 public:
-    MainWindow(QRect screenRect, bool askForResources, QWidget *parent = nullptr);
+    MainWindow(QRect screenRect, QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
-    static const QString iconName;
-    QString resourcesPath;
 
 private slots:
     void showAboutDialog();
-    void askForResourcesFolder();
 
 };
 #endif // MAINWINDOW_H

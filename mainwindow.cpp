@@ -14,20 +14,11 @@
 #include "gameboard.h"
 #include "application_constants.h"
 
-const QString MainWindow::iconName{"/app_icon"};
-
-MainWindow::MainWindow(QRect screenRect, bool askForResources, QWidget *parent)
+MainWindow::MainWindow(QRect screenRect, QWidget *parent)
     : QMainWindow(parent)
 {
-    if(askForResources) {
-        askForResourcesFolder();
-    }
-
-    QSettings settings;
-    resourcesPath = settings.value(keys::resourcesPath).toString();
-
     setWindowTitle(constant::appName);
-    setWindowIcon(QIcon(resourcesPath + iconName + ".png"));
+    setWindowIcon(QIcon(":/resources/app_icon.png"));
     GameBoard *gameBoard = new GameBoard(screenRect, constant::boardSizes[Large], this);
 
 
@@ -53,11 +44,11 @@ MainWindow::MainWindow(QRect screenRect, bool askForResources, QWidget *parent)
     menuBar()->addMenu(boardSize);
 
 
-    QMenu *settingsMenu = new QMenu(tr("Einstellungen"));
-    QAction *resourceAction = new QAction(tr("Resourcen Ordner"));
-    settingsMenu->addAction(resourceAction);
-    QObject::connect(resourceAction, &QAction::triggered, this, &MainWindow::askForResourcesFolder);
-    menuBar()->addMenu(settingsMenu);
+//    QMenu *settingsMenu = new QMenu(tr("Einstellungen"));
+//    QAction *resourceAction = new QAction(tr("Resourcen Ordner"));
+//    settingsMenu->addAction(resourceAction);
+//    QObject::connect(resourceAction, &QAction::triggered, this, &MainWindow::askForResourcesFolder);
+//    menuBar()->addMenu(settingsMenu);
 
 
     QMenu *aboutMenu = new QMenu(tr("Über"));
@@ -72,17 +63,12 @@ MainWindow::MainWindow(QRect screenRect, bool askForResources, QWidget *parent)
     setCentralWidget(gameBoard);
 }
 
-void MainWindow::askForResourcesFolder() {
-    resourcesPath = QFileDialog::getExistingDirectory(this, "Speicherort für Bilder");
-}
-
 
 void MainWindow::showAboutDialog() {
     QMessageBox::about(this, "Über Muckis Blumensweeper", "Ein MineSweeper Spiel ohne Werbung für Muckis Klapprechner.\nProgrammiert von Paul mit Grafiken von Pablo.\n2019");
 }
 
 MainWindow::~MainWindow() {
-    QSettings settings;
-    settings.setValue(keys::resourcesPath, resourcesPath);
+
 }
 

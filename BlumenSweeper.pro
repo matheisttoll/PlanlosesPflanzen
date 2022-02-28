@@ -33,3 +33,18 @@ HEADERS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    imageresources.qrc
+
+DISTFILES += \
+    resources/app_icon.png \
+    resources/flag_icon.png \
+    resources/square_flagged.png \
+    resources/square_mine_exploded.png \
+    resources/square_mine_flagged.png \
+    resources/square_mine_lost.png \
+    resources/square_mine_won.png \
+    resources/square_revealed.png \
+    resources/square_unrevealed.png \
+    resources/styleSheet.qss

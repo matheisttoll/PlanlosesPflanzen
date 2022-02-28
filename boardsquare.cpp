@@ -13,10 +13,8 @@ QSize BoardSquare::squareSize;
 
 void BoardSquare::loadPictures(QSize size) {
     squareSize = size;
-    QSettings settings;
-    QString resourcesPath = settings.value(keys::resourcesPath).toString();
     for(auto type : allSquareTypes) {
-        brushes[type] = QBrush(QPixmap(resourcesPath + "/square_" + imageNames[type] + ".png", "png").scaled(size));
+        brushes[type] = QBrush(QPixmap(":/resources/square_" + imageNames[type] + ".png", "png").scaled(size));
     }
 }
 
