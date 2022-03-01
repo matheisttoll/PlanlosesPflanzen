@@ -1,8 +1,11 @@
-# BlumenSweeper
+# PlanlosesPflanzen
 Minesweeper-like game with flower bulbs instead of mines.
 
 ## Gameplay
 Last year you planted flower bulbs randomly in your garden. Unfortunately you forgot all the locations! Now you need to recover the free positions. Whenever you uncover a free square, you find out how many flower bulbs are hidden under the adjacent squares. In case you uncover a square with a flower bulb, you loose.
+
+### Board Generation
+At the moment the program uses a naive implementation for board generatioin, that does not guarantee a deterministic solution.
 
 ## Screenshots
 ### Small Game Board
