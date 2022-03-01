@@ -52,7 +52,7 @@ MainWindow::MainWindow(QRect screenRect, QWidget *parent)
 
 
     QMenu *aboutMenu = new QMenu(tr("Über"));
-    QAction *about = new QAction(tr("Über Muckis Minessweeper"));
+    QAction *about = new QAction(tr("Über PlanlosesPflanzen"));
     QAction *aboutQt = new QAction(tr("Über Qt"));
     aboutMenu->addAction(aboutQt);
     aboutMenu->addAction(about);
@@ -65,7 +65,7 @@ MainWindow::MainWindow(QRect screenRect, QWidget *parent)
 
 
 void MainWindow::showAboutDialog() {
-    QMessageBox::about(this, "Über Muckis Blumensweeper", "Ein MineSweeper Spiel ohne Werbung für Muckis Klapprechner.\nProgrammiert von Paul mit Grafiken von Pablo.\n2019");
+    QMessageBox::about(this, "Über PlanlosesPlanzen", " ");
 }
 
 MainWindow::~MainWindow() {
