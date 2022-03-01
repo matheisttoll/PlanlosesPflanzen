@@ -7,6 +7,13 @@ Last year you planted flower bulbs randomly in your garden. Unfortunately you fo
 ### Board Generation
 At the moment the program uses a naive implementation for board generatioin, that does not guarantee a deterministic solution.
 
+### Building
+You need to have the Qt Development Tools installed. Then building is a easy as:
+```
+qmake PlanlosesPlanzen.pro
+make
+```
+
 ## Screenshots
 ### Small Game Board
 ![small game board](./screenshots/small.png)
